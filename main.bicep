@@ -16,6 +16,8 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
     httpsOnly: true
     serverFarmId: appServicePlan.id
     siteConfig: {
+      minTlsVersion: '1.2'
+      ftpsState: 'FtpsOnly'
       appSettings: [
         {
           name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
